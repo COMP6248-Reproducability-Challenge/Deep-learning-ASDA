@@ -280,3 +280,15 @@ def one_pixel_evolve():
 
 def one_pixel_attack(model, X, y):
     raise NotImplementedError
+from advertorch.attacks import CarliniWagnerL2Attack
+def CW(model,X,y,num_class=10,num_iter=10):
+    adversary = CarliniWagnerL2Attack(model, loss_fn=nn.CrossEntropyLoss(reduction="sum"),num_classes=num_class,confidence=0, targeted=False, learning_rate=0.01, binary_search_steps=5, max_iterations=20, abort_early=True, initial_const=0.001, clip_min=0.0, clip_max=1.0)
+    adv_untargeted = adversary.perturb(X, y)-X
+    return adv_untargeted
+
+
+from advertorch.attacks import MomentumIterativeAttack
+def MIM(model,X,y,num_iter=10):
+    adversary = MomentumIterativeAttack(model, loss_fn=nn.CrossEntropyLoss(reduction="sum"), eps=0.3, nb_iter=10, decay_factor=1.0, eps_iter=0.003, clip_min=0.0, clip_max=1.0)
+    adv_untargeted = adversary.perturb(X, y)-X
+    return adv_untargeted

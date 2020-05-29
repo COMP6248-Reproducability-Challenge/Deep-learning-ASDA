@@ -66,7 +66,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.MIM, device=device, num_iter=20, 
         use_tqdm=True)
 print("MIM:",adv_err) 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -100,7 +100,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -112,7 +112,7 @@ model = resnet.SparseResNet18(sparsities=[0.2,0.2,0.2,0.2], sparse_func='vol').t
 print("model loading --------k=0.2")
 model.load_state_dict(torch.load('models/spresnet18_0.2_cifar_80epochs.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -132,7 +132,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -166,7 +166,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.MIM, device=device, num_iter=20, 
         use_tqdm=True)
 print("MIM:",adv_err) 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -178,7 +178,7 @@ model = resnet.SparseResNet18(sparsities=[0.1,0.1,0.1,0.1], sparse_func='vol').t
 print("model loading --------k=0.1")
 model.load_state_dict(torch.load('models/spresnet18_0.1_cifar_adv.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -198,7 +198,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -211,7 +211,7 @@ print("model loading --------k=0.2")
 
 model.load_state_dict(torch.load('models/spresnet18_0.2_cifar_adv.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -231,7 +231,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -269,7 +269,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.MIM, device=device, num_iter=20, 
         use_tqdm=True)
 print("MIM:",adv_err) 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -281,7 +281,7 @@ model = resnet.SparseResNet18(sparsities=[0.1,0.1,0.1,0.1], sparse_func='vol').t
 print("model loading --------k=0.1")
 model.load_state_dict(torch.load('models/FAT_resnet18_0.1_cifar.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -301,7 +301,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -313,7 +313,7 @@ model = resnet.SparseResNet18(sparsities=[0.2,0.2,0.2,0.2], sparse_func='vol').t
 print("model loading --------k=0.2")
 model.load_state_dict(torch.load('models/spresnet18_0.2_cifar_free_80.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -333,7 +333,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -367,7 +367,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.MIM, device=device, num_iter=20, 
         use_tqdm=True)
 print("MIM:",adv_err) 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -379,7 +379,7 @@ model = resnet.SparseResNet18(sparsities=[0.1,0.1,0.1,0.1], sparse_func='vol').t
 print("model loading --------k=0.1")
 model.load_state_dict(torch.load('models/resnet18_0.1_cifar_trades_epoch79.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -399,7 +399,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
@@ -411,7 +411,7 @@ model = resnet.SparseResNet18(sparsities=[0.2,0.2,0.2,0.2], sparse_func='vol').t
 print("model loading --------k=0.2")
 model.load_state_dict(torch.load('models/spresnet18_cifar_k02_trades_epoch79.pth'))
 
-test_loader = DataLoader(svhn_test, batch_size = 400, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 400, shuffle=True)
 model.eval()
 test_err, test_loss = training.epoch(test_loader, model, device=device, use_tqdm=True)
 print("test",test_err)
@@ -431,7 +431,7 @@ adv_err, adv_loss = training.epoch_adversarial(test_loader,
         use_tqdm=True)
 print("MIM:",adv_err) 
 
-test_loader = DataLoader(svhn_test, batch_size = 1, shuffle=True)
+test_loader = DataLoader(cifar_test, batch_size = 1, shuffle=True)
 adv_err, adv_loss = training.epoch_adversarial(test_loader,
         model, attack=attack.deepfool, device=device, num_iter=20, 
         use_tqdm=True, epsilon=eps,n_test=1000)
